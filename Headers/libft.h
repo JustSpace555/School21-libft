@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:49:35 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/27 16:31:57 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/08/27 18:21:03 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "ft_printf/MainHeader/ft_printf.h"
+# include "../ft_printf/MainHeader/ft_printf.h"
 
 # define BUFF_SIZE 100
 # define MAX(a, b) (a > b ? a : b)
