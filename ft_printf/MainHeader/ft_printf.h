@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:02:49 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/24 19:49:39 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/08/27 18:09:35 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "../../libft.h"
+# include "../../Headers/libft.h"
 # define TYPES "%Xcdfiopsux"
 # define NUMBERS "0123456789"
 # define FLAGS " #+-0b"
