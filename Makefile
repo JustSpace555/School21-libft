@@ -6,7 +6,7 @@
 #    By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/04 22:56:07 by qmebble           #+#    #+#              #
-#    Updated: 2019/08/27 18:16:00 by qmebble          ###   ########.fr        #
+#    Updated: 2019/08/29 21:25:28 by qmebble          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ clean:
 	@make -C ft_printf/ clean
 
 fclean: clean
-	@rm -rf $(NAME) $(LIBS)
+	@rm -rf ../$(NAME) $(LIBS)
 	@make -C ft_printf/ fclean
 
 re: fclean all
