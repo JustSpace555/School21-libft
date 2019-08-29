@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
+/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:49:35 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/29 17:47:14 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/08/30 02:02:52 by space            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "../ft_printf/MainHeader/ft_printf.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
 
-# define BUFF_SIZE 100
 # define MAX(a, b) (a > b ? a : b)
 # define MIN(a, b) (a < b ? a : b)
 
@@ -101,8 +101,5 @@ char				*ft_mascut(char *s, int start, int end);
 void				*ft_realloc(void *s, int size);
 double				ft_abs(double s);
 double				ft_pow(double n, double s);
-
-int					get_next_line(const int fd, char **line);
-int					ft_printf(const char *format, ...);
 
 #endif
