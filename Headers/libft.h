@@ -6,7 +6,7 @@
 /*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:49:35 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/30 02:02:52 by space            ###   ########.fr       */
+/*   Updated: 2019/08/30 02:57:24 by space            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_strjoin_buffer
+{
+	unsigned int	overflow_counter;
+	int				size_for_malloc;
+	int				amount_chars;
+}					t_strjoin_buffer;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -76,6 +83,7 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t len);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin_n(int num, ...);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);

@@ -6,11 +6,12 @@
 #    By: space <space@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/04 22:56:07 by qmebble           #+#    #+#              #
-#    Updated: 2019/08/30 02:10:50 by space            ###   ########.fr        #
+#    Updated: 2019/08/30 02:53:01 by space            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_LIB =		Srcs/main_functions/*.c
+LIBFT_FOLDER = SRCS/main_functions/
+SRC_LIBFT =		$(LIBFT_FOLDER)*.c
 
 GET_NEXT_LINE_FOLDER = Srcs/get_next_line/
 SRC_GET_NEXT_LINE = $(GET_NEXT_LINE_FOLDER)*.c
@@ -25,8 +26,8 @@ SRC_FT_PRINTF = $(FT_PRINTF_FOLDER)HighestFunctions/*.c \
 				$(FT_PRINTF_FOLDER)DI/*.c \
 				$(FT_PRINTF_FOLDER)Unsigned/*.c \
 				$(FT_PRINTF_FOLDER)Float/*.c
-OBJ = *.o
-OBJ_DIT = obj
+
+OBJ_DIR = obj
 HEADERS_FOLDER = Headers/
 NAME = libft.a
 INCLUDE =	$(HEADERS_FOLDER)libft.h \
@@ -39,7 +40,7 @@ all: compile_libft compile_get_next_line compile_ft_printf ran_lib
 
 compile_libft:
 	@echo Compiling libft ...
-	@gcc $(FLAGS) -c $(SRC_LIB) -I $(INCLUDE)
+	@gcc $(FLAGS) -c $(SRC_LIBFT) -I $(INCLUDE)
 
 compile_get_next_line:
 	@echo Compilint get_next_line ...
@@ -50,14 +51,14 @@ compile_ft_printf:
 	@gcc $(FLAGS) -c $(SRC_FT_PRINTF) $(INCLUDE)
 
 ran_lib:
-	@ar rc $(NAME) $(OBJ)
+	@mkdir $(OBJ_DIR)
+	@mv *.o $(OBJ_DIR)/
+	@ar rc $(NAME) $(OBJ_DIR)/*.o
 	@ranlib $(NAME)
 	@mv $(NAME) ../$(NAME)
-	@mkdir obj
-	@mv *.o obj/
 
 clean:
-	@rm -rf $(OBJ_DIT) *SYMDEF* Headers/*.gch
+	@rm -rf $(OBJ_DIR) *SYMDEF* Headers/*.gch
 
 fclean: clean
 	@rm -rf ../$(NAME)
