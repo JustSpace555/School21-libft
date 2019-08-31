@@ -6,24 +6,14 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 02:21:00 by space             #+#    #+#             */
-/*   Updated: 2019/08/31 06:02:58 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/08/31 06:52:04 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Headers/libft.h"
 
-t_strjoin_buffer	make_new_strjoin_buffer(void)
-{
-	t_strjoin_buffer	buffer;
-
-	buffer.amount_chars = 0;
-	buffer.size_for_malloc = 50;
-	buffer.overflow_counter = 1;
-	return (buffer);
-}
-
-char				*check_for_overflow_strjoin(int len,
-					t_strjoin_buffer *buffer, char **str)
+char	*check_for_overflow_strjoin(int len, t_dynamic_buffer *buffer,
+									char **str)
 {
 	char	*new;
 
@@ -41,7 +31,7 @@ char				*check_for_overflow_strjoin(int len,
 	return (new);
 }
 
-void				strjoin_n(char **dest, char *src, t_strjoin_buffer *buffer)
+void	strjoin_n(char **dest, char *src, t_dynamic_buffer *buffer)
 {
 	int	i;
 	int	len;
@@ -55,12 +45,12 @@ void				strjoin_n(char **dest, char *src, t_strjoin_buffer *buffer)
 	}
 }
 
-char				*ft_strjoin_n(int num, ...)
+char	*ft_strjoin_n(int num, ...)
 {
 	va_list				open;
 	char				*final;
 	char				*temp;
-	t_strjoin_buffer	buffer;
+	t_dynamic_buffer	buffer;
 
 	va_start(open, num);
 	buffer = make_new_strjoin_buffer();

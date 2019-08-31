@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:49:35 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/30 02:57:24 by space            ###   ########.fr       */
+/*   Updated: 2019/08/31 08:58:11 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,168 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct		s_strjoin_buffer
+typedef struct		s_dynamic_buffer
 {
 	unsigned int	overflow_counter;
 	int				size_for_malloc;
 	int				amount_chars;
-}					t_strjoin_buffer;
+}					t_dynamic_buffer;
 
+/*
+**					Fills the first len bytes of the memory area
+**					with a character which code is indicated by argument c
+**
+**	@param			b	Block of memory
+**	@param			c	Value for assignment
+**	@param			len	amount of elements for assignment
+**
+**	@return			Changed block of memory
+*/
 void				*ft_memset(void *b, int c, size_t len);
+
+/*
+**					Nullifies each element of memory block (array)
+**
+**	@param			s	Block of memory (array)
+**	@param			n	Amount of elements to nullify
+**
+**	@return			N/A
+*/
 void				ft_bzero(void *s, size_t n);
+
+/*
+**					Copies values from one block of memory (array) to another
+**
+**	@param			s1	Destination array
+**	@param			s2	Source array
+**	@param			n	amount of elements to copy
+**
+**	@return			Changed block of memory
+*/
 void				*ft_memcpy(void *s1, const void *s2, size_t n);
+
+/*
+**					Copies the contents of the memory region pointed to source
+**					to the memory region pointed to destination.
+**					The copy operation ends when count bytes are copied or
+**					after copying the first occurrence of the character c.
+**
+**	@param			s1	Destiantion memory block
+**	@param			s2	Source memory block
+**	@param			c	Character to stop coping
+**	@param			n	Number of bytes to copy
+**
+**	@return			A pointer to the end of the s1 region
+**						if the c character was found
+**					NULL if c is not in s2
+*/
 void				*ft_memccpy(void *s1, const void *s2, int c, size_t n);
+
+/*
+**					Copies len bytes from the source array (memory region)
+**					to the destination array
+**
+**	@param			dst	Destiantion array
+**	@param			src	Source array
+**	@param			len	Amount if bytes for copy
+**
+**	@return			Pointer to array into which data is copied
+*/
 void				*ft_memmove(void *dst, const void *src, size_t len);
+
+/*
+**					Finds the first occurance of a character in array
+**					(memory region) for the first len bytes
+**
+**	@param			s	Source array
+**	@param			c	Character to find for
+**	@param			len	Amount of first bytes to search in
+**
+**	@return			Pointer to the character found or NULL if it is not found
+*/
 void				*ft_memchr(const void *s, int c, size_t n);
+
+/*
+**					Concatenates the string s1 and a copy of the string s2.
+**					At the end of the modified string s1, the function sets
+**					the null character.
+**
+**	@param			s1	String for concatenate with source string
+**	@param			s2	Source string
+**
+**	@return			Concatenated s1
+*/
 char				*ft_strcat(char *restrict s1, const char *restrict s2);
+
+/*
+**					Copies elements from string src to string dst
+**
+**	@param			@dst	The string where the copy is made
+**	@param			@src	Source string
+**
+**	@return			Changed destination string
+*/
 char				*ft_strcpy(char *dst, const char *src);
+
+/*
+**					Duplicates the string pointed to s1.
+**					Memory for a duplicate row is allocated using
+**					the malloc function
+**
+**	@param			s1	Source string
+**
+**	@return			Pointer to duplicated string or NULL if malloc error
+*/
 char				*ft_strdup(const char *s1);
+
+/*
+**					Adds to the string pointed to the destination argument,
+**					the string pointed to the source argument, until the end
+**					of line character is encountered or until n characters are
+**					added.
+**
+**	@param			s1	Destiantion string
+**	@param			s2	Source string
+**
+**	@return			pointer to destination string
+*/
 char				*ft_strncat(char *restrict s1, const char *restrict s2,
 	size_t n);
+
+/*
+**					Copies the data from the source string to the destination
+**					string, until the zero character is found or the number of
+**					copied characters reaches the certain amount of characters.
+**					In this case, the line terminator is not copied.
+**
+**	@param			dst	Destination string
+**	@param			src	Source string
+**	@param			len	Amount of characters to copy
+**
+**	@return			A pointer to modified destination string
+*/
 char				*ft_strncpy(char *dst, const char *src, size_t len);
+
+/*
+**					Searches for the first occurrence of a character in a string
+**
+**	@param			s	String to search in
+**	@param			c	Character to search for
+**
+**	@return			Pointer to the character if it is found, otherwise NULL
+*/
 char				*ft_strchr(const char *s, int c);
+
+/*
+**					Searches for the last occurrence of a character in a string
+**
+**	@param			s	String to search in
+**	@param			c	Character to search for
+**
+**	@return			Pointer to character if it is found, otherwise NULL
+*/
 char				*ft_strrchr(const char *s, int c);
+
 char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strnstr(const char *s1, const char *s2, size_t len);
 size_t				ft_strlcat(char *restrict dst, const char *restrict src,
@@ -109,5 +250,6 @@ char				*ft_mascut(char *s, int start, int end);
 void				*ft_realloc(void *s, int size);
 double				ft_abs(double s);
 double				ft_pow(double n, double s);
+t_dynamic_buffer	make_new_strjoin_buffer(void);
 
 #endif
