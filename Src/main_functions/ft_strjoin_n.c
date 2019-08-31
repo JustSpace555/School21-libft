@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin_n.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 02:21:00 by space             #+#    #+#             */
-/*   Updated: 2019/08/30 03:05:37 by space            ###   ########.fr       */
+/*   Updated: 2019/08/31 06:02:58 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_strjoin_buffer	make_new_strjoin_buffer(void)
 	return (buffer);
 }
 
-char				*check_for_overflow_strjoin(int len, t_strjoin_buffer *buffer, char **str)
+char				*check_for_overflow_strjoin(int len,
+					t_strjoin_buffer *buffer, char **str)
 {
 	char	*new;
 
@@ -54,7 +55,7 @@ void				strjoin_n(char **dest, char *src, t_strjoin_buffer *buffer)
 	}
 }
 
-char	*ft_strjoin_n(int num, ...)
+char				*ft_strjoin_n(int num, ...)
 {
 	va_list				open;
 	char				*final;

@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: space <space@student.42.fr>                +#+  +:+       +#+         #
+#    By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/04 22:56:07 by qmebble           #+#    #+#              #
-#    Updated: 2019/08/30 02:53:01 by space            ###   ########.fr        #
+#    Updated: 2019/08/31 06:03:47 by qmebble          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT_FOLDER = SRCS/main_functions/
+LIBFT_FOLDER = Src/main_functions/
 SRC_LIBFT =		$(LIBFT_FOLDER)*.c
 
-GET_NEXT_LINE_FOLDER = Srcs/get_next_line/
+GET_NEXT_LINE_FOLDER = Src/get_next_line/
 SRC_GET_NEXT_LINE = $(GET_NEXT_LINE_FOLDER)*.c
 
-FT_PRINTF_FOLDER = Srcs/ft_printf_functions/
+FT_PRINTF_FOLDER = Src/ft_printf_functions/
 SRC_FT_PRINTF = $(FT_PRINTF_FOLDER)HighestFunctions/*.c \
 				$(FT_PRINTF_FOLDER)HighestFunctions/Parsing/*.c \
 				$(FT_PRINTF_FOLDER)Char/*.c \
@@ -58,7 +58,7 @@ ran_lib:
 	@mv $(NAME) ../$(NAME)
 
 clean:
-	@rm -rf $(OBJ_DIR) *SYMDEF* Headers/*.gch
+	@rm -rf $(OBJ_DIR) *SYMDEF* $(HEADERS_FOLDER)*.gch
 
 fclean: clean
 	@rm -rf ../$(NAME)
