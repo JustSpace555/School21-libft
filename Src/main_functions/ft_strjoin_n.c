@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 02:21:00 by space             #+#    #+#             */
-/*   Updated: 2019/08/31 06:52:04 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/08/31 15:45:00 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_strjoin_n(int num, ...)
 	t_dynamic_buffer	buffer;
 
 	va_start(open, num);
-	buffer = make_new_strjoin_buffer();
+	buffer = make_new_dynamic_buffer();
 	final = (char *)malloc(sizeof(char) * buffer.size_for_malloc);
 	ft_bzero(final, buffer.size_for_malloc);
 	while (num > 0)

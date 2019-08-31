@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 14:05:57 by rsumner           #+#    #+#             */
-/*   Updated: 2019/08/30 01:55:44 by space            ###   ########.fr       */
+/*   Updated: 2019/08/31 18:51:31 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,16 @@ static char		*ft_fill(char const *s, char c, int i)
 		i++;
 		lett++;
 	}
-	if ((str = (char*)malloc(sizeof(char) * (lett + 1))))
+	if (!(str = (char *)malloc(sizeof(char) * (lett + 1))))
+		return (NULL);
+	j = 0;
+	while (j < lett)
 	{
-		j = 0;
-		while (j < lett)
-		{
-			str[j] = s[k];
-			k++;
-			j++;
-		}
-		str[j] = '\0';
+		str[j] = s[k];
+		k++;
+		j++;
 	}
+	str[j] = '\0';
 	return (str);
 }
 

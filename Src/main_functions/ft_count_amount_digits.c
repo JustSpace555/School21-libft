@@ -3,28 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_amount_digits.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 23:41:37 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/30 01:52:27 by space            ###   ########.fr       */
+/*   Updated: 2019/08/31 18:50:44 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Headers/libft.h"
 
-int		ft_count_amount_digits(int num)
+unsigned int	ft_count_amount_characters(void *num)
 {
-	int	d;
+	long long int	value;
+	int				d;
 
 	d = 0;
-	if (num <= 0)
+	value = (long long int)num;
+	if (value == -MAX_LL_INT - 1)
+		return (20);
+	if (value <= 0)
 	{
 		d = 1;
-		num *= -1;
+		value *= -1;
 	}
-	while (num > 0)
+	while (value > 0)
 	{
-		num /= 10;
+		value /= 10;
 		d++;
 	}
 	return (d);
