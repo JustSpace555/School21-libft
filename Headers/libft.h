@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
+/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:49:35 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/31 18:50:04 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/09/01 18:05:36 by space            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -279,10 +279,11 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 **					(Except float and double)
 **
 **	@param			num	Main value
+**	@param			type Value type (int, short, char, long int, long long int)
 **
 **	@return			Amount of characters in main value
 */
-unsigned int		ft_count_amount_characters(void *num);
+unsigned int		ft_count_amount_characters(void *num, char *type);
 
 /*
 **					Converts string to integer
