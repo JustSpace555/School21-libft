@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:49:35 by qmebble           #+#    #+#             */
-/*   Updated: 2019/09/01 18:05:36 by space            ###   ########.fr       */
+/*   Updated: 2019/09/06 22:13:09 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <fcntl.h>
 # include "ft_printf.h"
 # include "get_next_line.h"
+# include "colors.h"
 
 # define MAX(a, b) (a > b ? a : b)
 # define MIN(a, b) (a < b ? a : b)

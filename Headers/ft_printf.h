@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:02:49 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/30 01:44:48 by space            ###   ########.fr       */
+/*   Updated: 2019/09/06 22:12:40 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,6 @@
 # define CHECK_BIT(var, position) (var & (1 << position)) ? 1 : 0
 # define PUT_BIT(var, position) (var |= (1 << position))
 # define DEL_BIT(var, position) (var &= ~(1 << position))
-# define NORMAL "\x1b[0m"
-# define BLACK "\x1b[30m"
-# define RED "\x1b[31m"
-# define GREEN "\x1b[32m"
-# define YELLOW "\x1b[33m"
-# define BLUE "\x1b[34m"
-# define PURPLE "\x1b[35m"
-# define CYAN "\x1b[36m"
-# define GREY "\x1b[37m"
 # define MAX_CHAR				127
 # define MAX_UNSIGNED_CHAR		255
 # define MAX_SHORT_INT			32767
