@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:56:20 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/30 01:52:46 by space            ###   ########.fr       */
+/*   Updated: 2019/09/23 00:05:13 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char			*ft_itoa(int n)
 		return (NULL);
 	str[--len] = temp % 10 + '0';
 	while (temp /= 10)
-		str[--len] = temp % 10 + '0';
+		str[--len] = (temp % 10) + '0';
 	if (n < 0)
 		str[0] = '-';
 	return (str);
