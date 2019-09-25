@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:56:20 by qmebble           #+#    #+#             */
-/*   Updated: 2019/09/23 00:05:13 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/09/25 14:34:38 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char			*ft_itoa(int n)
 		temp = -n;
 		len++;
 	}
-	if (!(str = ft_strnew(len)))
+	if (!(str = ft_strnew(len + 1)))
 		return (NULL);
 	str[--len] = temp % 10 + '0';
 	while (temp /= 10)

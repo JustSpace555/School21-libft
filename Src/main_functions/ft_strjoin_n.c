@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 02:21:00 by space             #+#    #+#             */
-/*   Updated: 2019/08/31 15:45:00 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/09/23 20:26:59 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ char	*check_for_overflow_strjoin(int len, t_dynamic_buffer *buffer,
 	}
 	new = (char *)malloc(sizeof(char) * buffer->size_for_malloc);
 	ft_bzero(new, buffer->size_for_malloc);
-	ft_strcpy(new, *str);
-	free(*str);
+	new = ft_strcpy(new, *str);
+	ft_strdel(str);
 	return (new);
 }
 

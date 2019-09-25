@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:49:35 by qmebble           #+#    #+#             */
-/*   Updated: 2019/09/06 22:13:09 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/09/23 21:54:38 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 
 # define MAX(a, b) (a > b ? a : b)
 # define MIN(a, b) (a < b ? a : b)
+
+/*
+**	Debug malloc
+**
+** # define malloc(X) my_malloc( X, __FILE__, __LINE__, __FUNCTION__)
+*/
 
 typedef struct		s_list
 {
@@ -818,5 +824,7 @@ double				ft_pow(double n, double s);
 **	@return			Buffer ready fot use
 */
 t_dynamic_buffer	make_new_dynamic_buffer(void);
+
+void	*my_malloc(size_t size, const char *file, int line, const char *func);
 
 #endif
