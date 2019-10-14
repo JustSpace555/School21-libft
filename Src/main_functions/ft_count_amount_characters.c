@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_amount_characters.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 23:41:37 by qmebble           #+#    #+#             */
-/*   Updated: 2019/09/01 18:05:39 by space            ###   ########.fr       */
+/*   Updated: 2019/10/14 13:21:03 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ unsigned int	ft_count_amount_characters(void *num, char *type)
 	}
 	return (d);
 }
-

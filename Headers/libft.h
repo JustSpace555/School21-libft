@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:49:35 by qmebble           #+#    #+#             */
-/*   Updated: 2019/09/23 21:54:38 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/14 13:18:29 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -825,6 +825,11 @@ double				ft_pow(double n, double s);
 */
 t_dynamic_buffer	make_new_dynamic_buffer(void);
 
-void	*my_malloc(size_t size, const char *file, int line, const char *func);
+/*
+**					Allocates memory and prints amount of allocated bytes,
+**					file's and function's name where function malloc was used
+*/
+void				*my_malloc(size_t size, const char *file,
+									int line, const char *func);
 
 #endif
