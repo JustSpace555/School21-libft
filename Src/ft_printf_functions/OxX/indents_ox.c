@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   indents_ox.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:50:36 by fmasha-h          #+#    #+#             */
-/*   Updated: 2019/08/30 01:31:00 by space            ###   ########.fr       */
+/*   Updated: 2019/10/16 12:43:33 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void		fill_plus(t_pf *data)
 	g_buffer->final[i] = '\0';
 	g_buffer->str_len = i;
 	ft_strcpy(g_buffer->str, g_buffer->final);
-	ft_bzero(g_buffer->final, g_buffer->buff_size + 1);
+	ft_bzero(g_buffer->final, g_buffer->buff_size);
 }
 
 void		fill_indents_grid_o(t_pf *data)
