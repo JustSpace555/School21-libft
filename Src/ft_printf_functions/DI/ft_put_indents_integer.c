@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_indents_integer.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: space <space@student.42.fr>                +#+  +:+       +#+        */
+/*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:00:40 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/30 01:27:49 by space            ###   ########.fr       */
+/*   Updated: 2019/10/16 14:30:36 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	if_not_zero(int len)
 	}
 	g_buffer->str_len = i;
 	ft_strcpy(g_buffer->str, g_buffer->final);
-	ft_bzero(g_buffer->final, g_buffer->buff_size + 1);
+	ft_bzero(g_buffer->final, g_buffer->buff_size);
 }
 
 void	if_zero(int len)
@@ -55,7 +55,7 @@ void	if_zero(int len)
 	}
 	g_buffer->str_len += len;
 	ft_strcpy(g_buffer->str, g_buffer->final);
-	ft_bzero(g_buffer->final, g_buffer->buff_size + 1);
+	ft_bzero(g_buffer->final, g_buffer->buff_size);
 }
 
 void	if_not_minus_integer(t_pf *data)
@@ -97,7 +97,7 @@ void	if_minus_integer(t_pf *data)
 	}
 	g_buffer->str_len = i;
 	ft_strcpy(g_buffer->str, g_buffer->final);
-	ft_bzero(g_buffer->final, g_buffer->buff_size + 1);
+	ft_bzero(g_buffer->final, g_buffer->buff_size);
 }
 
 void	ft_put_indents_integer(t_pf *data)
